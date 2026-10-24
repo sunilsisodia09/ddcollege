@@ -37,7 +37,7 @@ const stories: SuccessStory[] = [
     role: "Software Engineer",
     company: "Microsoft",
     companyLogo: "/images/microsoft-logo.png",
-    image: "/images/stda.webp",
+    image: "/students/ab.jpeg",
     quote:
       "The practical learning environment helped me strengthen my technical skills and confidence. The guidance from faculty played an important role in preparing me for my professional journey.",
   },

@@ -6,27 +6,27 @@ import "./Affiliation.css";
 const affiliations = [
   {
     name: "UTU",
-    logo: "/images/BCI.png",
+    logo: "/logos/a.jpeg",
   },
   {
     name: "HNBGU",
-    logo: "/images/sanskrit.png",
+       logo: "/logos/b.jpeg",
   },
   {
     name: "SDSUV",
-    logo: "/images/UBTER.png",
+      logo: "/logos/c.jpeg",
   },
   {
     name: "UGC",
-    logo: "/images/UGC.png",
+    logo: "/logos/e.jpeg",
   },
   {
     name: "PCI",
-    logo: "/images/Shri.png",
+      logo: "/logos/d.jpeg",
   },
   {
     name: "NCTE",
-    logo: "/images/NCTE.png",
+    logo: "/logos/b.jpeg",
   },
 ];
 
