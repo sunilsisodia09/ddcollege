@@ -1,0 +1,155 @@
+.dd-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 48vw, 700px);
+  min-height: 380px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f4f1ed;
+}
+
+.dd-hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Show the complete image without cropping */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.dd-hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dd-hero-controls {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  pointer-events: none;
+}
+
+.dd-hero-controls > button {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: rgba(40, 10, 20, 0.65);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background 0.2s ease;
+}
+
+.dd-hero-controls > button:hover {
+  background: #8b0929;
+}
+
+.dd-hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.dd-hero-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.dd-hero-dots button.active {
+  width: 26px;
+  background: #fdbb24;
+}
+
+/* Laptop and desktop */
+@media (min-width: 1024px) {
+  .dd-hero {
+    height: min(48vw, 700px);
+    min-height: 480px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .dd-hero {
+    height: clamp(320px, 52vw, 520px);
+    min-height: 320px;
+  }
+
+  .dd-hero-slide {
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .dd-hero {
+    height: 56vw;
+    min-height: 210px;
+    max-height: 360px;
+  }
+
+  .dd-hero-slide {
+    background-position: center center;
+    background-size: contain;
+  }
+
+  .dd-hero-controls {
+    bottom: 8px;
+    gap: 12px;
+  }
+
+  .dd-hero-controls > button {
+    width: 29px;
+    height: 29px;
+    font-size: 16px;
+  }
+
+  .dd-hero-dots {
+    gap: 6px;
+  }
+
+  .dd-hero-dots button {
+    width: 7px;
+    height: 7px;
+  }
+
+  .dd-hero-dots button.active {
+    width: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dd-hero-slide,
+  .dd-hero-dots button,
+  .dd-hero-controls > button {
+    transition: none;
+  }
+}
